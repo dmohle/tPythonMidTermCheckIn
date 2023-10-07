@@ -87,7 +87,7 @@ with open('arrivingAnimals.txt', 'r') as file:
         data = line.strip().split(', ')
         age = data[0]
         species = data[1]
-        # Continue parsing and processing the data to create Animal objects
+... Continue parsing and processing the data to create Animal objects
 
 Step 5: Implement Functions
 
@@ -111,24 +111,24 @@ Now, let's discuss how you will create the habitats for different species of ani
 
 Sample Python code...
 
-# Initialize lists for each species
+## Initialize lists for each species
 hyena_habitat = []
 lion_habitat = []
 tiger_habitat = []
 bear_habitat = []
 
-# Initialize a list to hold all animals
+## Initialize a list to hold all animals
 all_animals = [hyena_habitat, lion_habitat, tiger_habitat, bear_habitat]
 
-# Example: Adding a Hyena to the Hyena habitat
+Example: Adding a Hyena to the Hyena habitat
 hyena = Hyena(...)
 hyena_habitat.append(hyena)
 
-# Example: Adding a Lion to the Lion habitat
+Example: Adding a Lion to the Lion habitat
 lion = Lion(...)
 lion_habitat.append(lion)
 
-# Repeat similar steps for Tigers and Bears
+Repeat similar steps for Tigers and Bears
 This code helps you organize the animals into their respective habitats.
 
 Step 7: Write Output to File
@@ -136,15 +136,18 @@ Generate a report (e.g., zooPopulation.txt) containing all zoo animals and their
 
 Sample Python Code:
 
-# Output all animals organized by species
+## Output all animals organized by species
 with open('zooPopulation.txt', 'w') as output_file:
     for index, species_habitat in enumerate(all_animals):
-        species_name = ["Hyena", "Lion", "Tiger", "Bear"][index]  # Get the species name based on index
+        # Get the species name based on index
+        species_name = ["Hyena", "Lion", "Tiger", "Bear"][index]  
         output_file.write(f"{species_name} Habitat:\n")
         
-        # Iterate through animals in the species habitat
-        for animal in species_habitat:
-            output_file.write(f"{animal.unique_id}; {animal.name}; {animal.age} years old; birth date {animal.birth_date}; {animal.color} color; {animal.gender}; {animal.weight} pounds; from {animal.originating_zoo}; arrived {animal.arrival_date}\n")
+## Iterate through animals in the species habitat
+for animal in species_habitat:
+    output_file.write(f"{animal.unique_id}; {animal.name}; {animal.age} years old; birth date {animal.birth_date}; {animal.color} color; 
+    {animal.gender}; {animal.weight} pounds; from {animal.originating_zoo}; arrived {animal.arrival_date}\n")
+
 This code will help you generate the required report in the zooPopulation.txt file, organized by species.
 
 Using Classes in Separate Files and Creating Custom Libraries
